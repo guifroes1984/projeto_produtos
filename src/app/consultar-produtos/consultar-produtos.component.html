@@ -22,9 +22,9 @@
     <td>{{p.descricao}}</td>
     <td>
 
-    <button class="btn btn-sm btn-primary">Editar</button>
+    <button class="btn btn-sm btn-primary" [routerLink]="['/editar-produtos', p.idProduto]">Editar</button>
     &nbsp;
-    <button class="btn btn-sm btn-danger">Excluir</button>
+    <button class="btn btn-sm btn-danger" (click)="excluir(p.idProduto)">Excluir</button>
     </td>
   </tr>
 </tbody>

@@ -8,26 +8,31 @@ import { CadastrarProdutosComponent } from './cadastrar-produtos/cadastrar-produ
 import { ConsultarProdutosComponent } from './consultar-produtos/consultar-produtos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { from } from 'rxjs';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditarProdutosComponent } from './editar-produtos/editar-produtos.component';
 
 // Criar os módulos
 const routes: Routes = [
   
   { path: 'cadastrar-produtos', component: CadastrarProdutosComponent },
-  { path: 'consultar-produtos', component: ConsultarProdutosComponent }
-
+  { path: 'consultar-produtos', component: ConsultarProdutosComponent },
+  { path: 'editar-produtos/:id', component: EditarProdutosComponent }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastrarProdutosComponent,
-    ConsultarProdutosComponent
+    ConsultarProdutosComponent,
+    EditarProdutosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
